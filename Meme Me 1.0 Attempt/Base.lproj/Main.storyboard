@@ -11,7 +11,7 @@
         <!--View Controller-->
         <scene sceneID="SZ1-Yk-xf9">
             <objects>
-                <viewController id="eiK-lf-MSa" customClass="ViewController" customModule="Image_Picker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="eiK-lf-MSa" customClass="ViewController" customModule="Meme_Me_1_0_Attempt" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oTe-6r-g0e">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
