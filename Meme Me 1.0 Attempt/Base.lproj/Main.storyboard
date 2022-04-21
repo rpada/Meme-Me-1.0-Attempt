@@ -1,24 +1,118 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eiK-lf-MSa">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <scene sceneID="SZ1-Yk-xf9">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <viewController id="eiK-lf-MSa" customClass="ViewController" customModule="Image_Picker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oTe-6r-g0e">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="djE-sJ-Lad">
+                                <rect key="frame" x="0.0" y="804" width="414" height="44"/>
+                                <items>
+                                    <barButtonItem title="Photo Album" id="wGU-iN-2w6">
+                                        <connections>
+                                            <action selector="pickAnImageFromAlbum:" destination="eiK-lf-MSa" id="5O1-JQ-3Si"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="jVV-JO-0Sm"/>
+                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="3gz-Ea-uFe"/>
+                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="w5y-rP-1S3"/>
+                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="9XB-Mx-LQV"/>
+                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="dR2-vN-GZy"/>
+                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="5jE-Ye-MQp"/>
+                                    <barButtonItem title="cameraButton" image="camera" catalog="system" id="8Cc-gF-L0y">
+                                        <connections>
+                                            <action selector="pickAnImageFromCamera:" destination="eiK-lf-MSa" id="6SL-zK-OGI"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ubZ-fA-1x5">
+                                <rect key="frame" x="0.0" y="184.5" width="414" height="527"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o13-NC-iNX">
+                                <rect key="frame" x="0.0" y="641" width="414" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="MY0-hG-vH7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                            </textField>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iI6-km-9zC">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <items>
+                                    <barButtonItem title="Share" image="square.and.arrow.up" catalog="system" id="fTo-El-sCN">
+                                        <connections>
+                                            <action selector="shareMemeImage:" destination="eiK-lf-MSa" id="ORD-Pd-ial"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="wWT-lN-KH9"/>
+                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="kil-Bt-jKz"/>
+                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="uXy-DG-ZE6"/>
+                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="xAj-X7-5QR"/>
+                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="rxf-nl-lGi"/>
+                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="vb2-Ns-h89"/>
+                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="WUT-9R-NsM"/>
+                                </items>
+                            </toolbar>
+                            <textField opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qUA-8C-2nd">
+                                <rect key="frame" x="0.0" y="211.5" width="414" height="18.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="SU1-Ob-rn8"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="o13-NC-iNX" firstAttribute="leading" secondItem="SU1-Ob-rn8" secondAttribute="leading" id="88N-Nq-bkt"/>
+                            <constraint firstItem="djE-sJ-Lad" firstAttribute="top" secondItem="ubZ-fA-1x5" secondAttribute="bottom" constant="92.5" id="CFc-Yf-GH2"/>
+                            <constraint firstItem="o13-NC-iNX" firstAttribute="trailing" secondItem="qUA-8C-2nd" secondAttribute="trailing" id="HxP-bR-odv"/>
+                            <constraint firstItem="o13-NC-iNX" firstAttribute="leading" secondItem="ubZ-fA-1x5" secondAttribute="leading" id="IDZ-M6-qt7"/>
+                            <constraint firstItem="o13-NC-iNX" firstAttribute="leading" secondItem="djE-sJ-Lad" secondAttribute="leading" id="L7T-j7-l1l"/>
+                            <constraint firstItem="iI6-km-9zC" firstAttribute="top" secondItem="SU1-Ob-rn8" secondAttribute="top" id="MUY-1h-R3l"/>
+                            <constraint firstItem="o13-NC-iNX" firstAttribute="trailing" secondItem="djE-sJ-Lad" secondAttribute="trailing" id="NCN-mD-rvF"/>
+                            <constraint firstItem="o13-NC-iNX" firstAttribute="trailing" secondItem="iI6-km-9zC" secondAttribute="trailing" id="OwL-jd-YPT"/>
+                            <constraint firstItem="o13-NC-iNX" firstAttribute="leading" secondItem="qUA-8C-2nd" secondAttribute="leading" id="bGr-xk-UnQ"/>
+                            <constraint firstItem="ubZ-fA-1x5" firstAttribute="top" secondItem="iI6-km-9zC" secondAttribute="bottom" constant="96.5" id="eEv-b4-Cce"/>
+                            <constraint firstItem="SU1-Ob-rn8" firstAttribute="bottom" secondItem="djE-sJ-Lad" secondAttribute="bottom" constant="14" id="ezI-R7-QX0"/>
+                            <constraint firstItem="qUA-8C-2nd" firstAttribute="top" secondItem="oTe-6r-g0e" secondAttribute="top" constant="211.5" id="oTL-Bz-kBd"/>
+                            <constraint firstItem="o13-NC-iNX" firstAttribute="trailing" secondItem="ubZ-fA-1x5" secondAttribute="trailing" id="qu3-dx-QeS"/>
+                            <constraint firstItem="o13-NC-iNX" firstAttribute="centerX" secondItem="oTe-6r-g0e" secondAttribute="centerX" id="u5e-3e-fWS"/>
+                            <constraint firstItem="o13-NC-iNX" firstAttribute="leading" secondItem="iI6-km-9zC" secondAttribute="leading" id="vMv-9A-I6y"/>
+                            <constraint firstAttribute="bottom" secondItem="o13-NC-iNX" secondAttribute="bottom" constant="221" id="ytv-u8-NFP"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="BottomText" destination="o13-NC-iNX" id="hnn-hv-Zbz"/>
+                        <outlet property="ButtonShare" destination="fTo-El-sCN" id="IpD-lz-bkY"/>
+                        <outlet property="PickImage" destination="djE-sJ-Lad" id="J8i-Ui-fUK"/>
+                        <outlet property="TopText" destination="qUA-8C-2nd" id="UEd-c8-Psy"/>
+                        <outlet property="cameraButton" destination="8Cc-gF-L0y" id="rkz-cM-GqO"/>
+                        <outlet property="imagePickerView" destination="ubZ-fA-1x5" id="IKD-Sc-dOq"/>
+                        <outlet property="shareToolbar" destination="iI6-km-9zC" id="ixg-j9-SQc"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QJI-Xf-M9v" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="28.985507246376812" y="69.642857142857139"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="camera" catalog="system" width="128" height="94"/>
+        <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
