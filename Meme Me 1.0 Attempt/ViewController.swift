@@ -21,18 +21,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,
     @IBOutlet weak var BottomText: UITextField!
     @IBOutlet weak var imagePickerView: UIImageView!
     @IBOutlet weak var ButtonShare: UIBarButtonItem!
+        
     override func viewDidLoad() {
         
-        let memeTextAttributes: [NSAttributedString.Key: Any] = [
-            NSAttributedString.Key.strokeColor: UIColor.black ,
-            NSAttributedString.Key.foregroundColor: UIColor.white ,
-            NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
-            NSAttributedString.Key.strokeWidth: -4.5
-        ]
         super.viewDidLoad()
         ButtonShare.isEnabled = false
-        TopText.defaultTextAttributes = memeTextAttributes
-        BottomText.defaultTextAttributes = memeTextAttributes
+        setupTextField(textField: TopText)
+        setupTextField(textField: BottomText)
         TopText.delegate = self
         BottomText.delegate = self
     }
@@ -50,12 +45,25 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,
         // from Udacity iOS Development course, Lesson 4 section 12
     }
 
+    func setupTextField(textField: UITextField) {
+            //setting default attributes
+            let memetextAttributes: [NSAttributedString.Key: Any] = [
+                NSAttributedString.Key.strokeColor: UIColor.black ,
+                NSAttributedString.Key.foregroundColor: UIColor.white ,
+                NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
+                NSAttributedString.Key.strokeWidth: -4.5
+            ]
+        textField.defaultTextAttributes = memetextAttributes
+        textField.textAlignment = .center
+        textField.delegate = self
+        }
+    
     // from Udacity iOS Development course, Lesson 4 section 5
-    @IBAction func pickAnImage(_ sender: Any) {
+    @IBAction func pickImage(_ imageSource: UIImagePickerController.SourceType) {
         let imagePicker = UIImagePickerController()
-        imagePicker.delegate = self
-        dismiss(animated: true, completion: nil)
-        present(imagePicker, animated: true, completion: nil)
+             imagePicker.delegate = self
+             imagePicker.sourceType = imageSource
+             present(imagePicker, animated: true, completion: nil)
     }
     // from Udacity iOS Development course, Lesson 4 section 7
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -67,19 +75,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,
     }
     // from Udacity iOS Development course, Lesson 4 section 8
     @IBAction func pickAnImageFromAlbum(_ sender: Any) {
-
-          let imagePicker = UIImagePickerController()
-          imagePicker.delegate = self
-        imagePicker.sourceType = .photoLibrary
-          present(imagePicker, animated: true, completion: nil)
-      }
+        self.pickImage(.photoLibrary)    }
     // from Udacity iOS Development course, Lesson 4 section 8
     @IBAction func pickAnImageFromCamera(_ sender: Any) {
-
-           let imagePicker = UIImagePickerController()
-           imagePicker.delegate = self
-            imagePicker.sourceType = .camera
-           present(imagePicker, animated: true, completion: nil)
+        self.pickImage(.camera)
        }
   
     // from https://stackoverflow.com/questions/41537721/how-to-hide-keyboard-when-return-key-is-hit-swift
@@ -159,10 +158,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,
     // from Udacity iOS Development course, Lesson 4 section 12
     func getKeyboardHeight(_ notification:Notification) -> CGFloat {
         let userInfo = notification.userInfo
-        let keyboardSize = userInfo![UIResponder.keyboardFrameEndUserInfoKey] as! NSValue
+        let keyboardSize = userInfo![UIResponder.keyboardFrameEndUserInfoKey] as! NSValue // of CGRect
         return keyboardSize.cgRectValue.height
     }
     
     
    
 }
+
