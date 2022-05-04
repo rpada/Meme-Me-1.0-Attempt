@@ -21,6 +21,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,
     @IBOutlet weak var BottomText: UITextField!
     @IBOutlet weak var imagePickerView: UIImageView!
     @IBOutlet weak var ButtonShare: UIBarButtonItem!
+    
+    var memes = [Meme]()
         
     override func viewDidLoad() {
         
@@ -89,11 +91,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,
     }
     
     // from Udacity iOS Development course, Lesson 4 section 15
-    func save() {
-        // Create the meme
-        let memeImage = generateMemedImage()
-        _ = Meme(topText: TopText.text!, bottomText: BottomText.text!, originalImage: imagePickerView.image!, memedImage: memeImage)
-    }
+  
     // from Udacity iOS Development course, Lesson 4 section 15
     func generateMemedImage() -> UIImage {
         // TODO: Hide toolbar and navbar
@@ -132,6 +130,16 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,
         
         self.present(activityViewController, animated: true, completion: nil)
        
+    }
+    func save() {
+        // Create the meme
+        let memeImage = generateMemedImage()
+        let meme = Meme(topText: TopText.text!, bottomText: BottomText.text!, originalImage: imagePickerView.image!, memedImage: memeImage)
+        
+        // Add it to the memes array in the Application Delegate
+          let object = UIApplication.shared.delegate
+        let appDelegate = object as! AppDelegate
+         appDelegate.memes.append(memeImage)
     }
     // from Udacity iOS Development course, Lesson 4 section 12
     func subscribeToKeyboardNotifications() {
