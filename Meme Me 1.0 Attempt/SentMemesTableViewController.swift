@@ -7,8 +7,7 @@
 
 import Foundation
 import UIKit
-
-class SentMemesTableViewController: UICollectionViewController {
+class SentMemesTableViewController: UITableViewController {
     
     @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
     
@@ -17,4 +16,33 @@ class SentMemesTableViewController: UICollectionViewController {
         let appDelegate = object as! AppDelegate
         return appDelegate.memes
     }
-}
+    
+     override func viewWillAppear(_ animated: Bool) {
+         super.viewWillAppear(animated)
+         tableView.reloadData()
+     }
+     
+     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+         return memes.count
+     }
+     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+         let cell = tableView.dequeueReusableCell(withIdentifier: "MemeTableViewCell")!
+         let meme = getMeme(indexPath: indexPath)
+         
+         cell.textLabel!.text = meme.topText + " " + meme.bottomText
+         cell.imageView?.image = meme.memedImage
+         return cell
+     }
+     
+     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+         let detailViewController = storyboard!.instantiateViewController(withIdentifier: "MemeDetailViewController") as! MemeDetailViewController
+         detailViewController.meme = getMeme(indexPath: indexPath)
+     
+         navigationController!.pushViewController(detailViewController, animated: true)
+     }
+     func getMeme(indexPath: IndexPath) -> Meme {
+         return memes[(indexPath as NSIndexPath).row]
+     }
+ }
+
+

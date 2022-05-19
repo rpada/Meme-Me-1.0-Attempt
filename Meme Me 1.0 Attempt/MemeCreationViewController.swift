@@ -8,12 +8,7 @@ import UIKit
 class ViewController: UIViewController, UIImagePickerControllerDelegate,
                       UINavigationControllerDelegate, UITextFieldDelegate
 {
-    struct Meme {
-        var topText: String
-        var bottomText: String
-        var originalImage: UIImage
-        var memedImage: UIImage
-    }
+ 
     @IBOutlet weak var shareToolbar: UIToolbar!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     @IBOutlet weak var PickImage: UIToolbar!
@@ -21,9 +16,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,
     @IBOutlet weak var BottomText: UITextField!
     @IBOutlet weak var imagePickerView: UIImageView!
     @IBOutlet weak var ButtonShare: UIBarButtonItem!
-    
-    var memes = [Meme]()
-        
+            
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -117,9 +110,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,
     }
     
     @IBAction func shareMemeImage(_ sender: UIBarButtonItem){
-        let finalMeme = generateMemedImage()
+        let memeImage = generateMemedImage()
        
-        let activityViewController = UIActivityViewController(activityItems: [finalMeme], applicationActivities: nil)
+        let activityViewController = UIActivityViewController(activityItems: [memeImage], applicationActivities: nil)
         
         activityViewController.completionWithItemsHandler = { (activityType, completed, returnedItems, activityError) -> () in
             if (completed) {
@@ -137,9 +130,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,
         let meme = Meme(topText: TopText.text!, bottomText: BottomText.text!, originalImage: imagePickerView.image!, memedImage: memeImage)
         
         // Add it to the memes array in the Application Delegate
-          let object = UIApplication.shared.delegate
+        let object = UIApplication.shared.delegate
         let appDelegate = object as! AppDelegate
-         appDelegate.memes.append(memeImage)
+        appDelegate.memes.append(meme)
     }
     // from Udacity iOS Development course, Lesson 4 section 12
     func subscribeToKeyboardNotifications() {
