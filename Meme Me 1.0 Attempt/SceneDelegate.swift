@@ -2,7 +2,7 @@
 //  SceneDelegate.swift
 //  Meme Me 1.0 Attempt
 //
-//  Created by Brenna Pada on 4/20/22.
+//  Created by Rianne Pada on 4/20/22.
 //
 
 import UIKit
