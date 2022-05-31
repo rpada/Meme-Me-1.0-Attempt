@@ -1,10 +1,3 @@
-//
-//  SentMemesCollectionViewController.swift
-//  MemeMe 2.0
-//
-//  Created by 🍑 on 09/10/2019.
-//  Copyright © 2019 udacity. All rights reserved.
-//
 
 import Foundation
 import UIKit
@@ -45,9 +38,9 @@ class SentMemesCollectionViewController: UICollectionViewController {
     
     // MARK: Set cell view
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SentMemesCollectionViewCells", for: indexPath) as! SentMemesCollectionViewCells
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SentMemesCollectionViewCells", for: indexPath) as! MemeCell
         let meme = self.memes[(indexPath as NSIndexPath).row]
-        cell.memeImage?.image = meme.memedImage
+        cell.image?.image = meme.memedImage
         return cell
     }
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
