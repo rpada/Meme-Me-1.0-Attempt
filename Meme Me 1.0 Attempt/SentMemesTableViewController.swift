@@ -2,7 +2,7 @@
 //  SentMemesTableViewController.swift
 //  Meme Me 1.0 Attempt
 //
-//  Created by Brenna Pada on 5/3/22.
+//  Created by Rianne Pada on 5/3/22.
 //
 
 import Foundation
