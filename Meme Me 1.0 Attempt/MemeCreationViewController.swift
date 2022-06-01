@@ -52,7 +52,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,
         textField.textAlignment = .center
         textField.delegate = self
         }
-    
+    @IBAction func cancel(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
     // from Udacity iOS Development course, Lesson 4 section 5
     @IBAction func pickImage(_ imageSource: UIImagePickerController.SourceType) {
         let imagePicker = UIImagePickerController()

@@ -32,7 +32,7 @@
             <objects>
                 <tableViewController id="W5a-yB-lRO" customClass="SentMemesTableViewController" customModule="Meme_Me_1_0_Attempt" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="MmQ-iy-DtJ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <button key="tableHeaderView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="zzV-8i-mTG">
@@ -146,15 +146,15 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="plus" catalog="system"/>
+                                <connections>
+                                    <segue destination="eiK-lf-MSa" kind="presentation" modalPresentationStyle="fullScreen" id="KWf-eE-uWm"/>
+                                </connections>
                             </button>
-                            <connections>
-                                <segue destination="eiK-lf-MSa" kind="presentation" modalPresentationStyle="fullScreen" id="wFf-O2-nTf"/>
-                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="flowLayout" destination="xBf-LF-ehp" id="6u2-af-7Je"/>
+                        <outlet property="flowLayout" destination="xBf-LF-ehp" id="Y3J-5E-gvr"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aDh-v9-WWe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -216,6 +216,18 @@
                                     <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="xAj-X7-5QR"/>
                                     <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="rxf-nl-lGi"/>
                                     <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="vb2-Ns-h89"/>
+                                    <barButtonItem style="plain" id="B1f-bS-ELh">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="jJz-o0-qNU">
+                                            <rect key="frame" x="301" y="0.0" width="77" height="44"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain" title="Cancel"/>
+                                            <connections>
+                                                <action selector="cancelMeme:" destination="eiK-lf-MSa" eventType="touchUpInside" id="pCi-vp-hRm"/>
+                                                <segue destination="W5a-yB-lRO" kind="show" id="KnT-ot-MyW"/>
+                                            </connections>
+                                        </button>
+                                    </barButtonItem>
                                     <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="WUT-9R-NsM"/>
                                 </items>
                             </toolbar>
@@ -258,11 +270,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QJI-Xf-M9v" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1091" y="288"/>
+            <point key="canvasLocation" x="1089.8550724637682" y="287.94642857142856"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="wFf-O2-nTf"/>
+        <segue reference="KWf-eE-uWm"/>
+        <segue reference="KnT-ot-MyW"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="camera" catalog="system" width="128" height="94"/>
