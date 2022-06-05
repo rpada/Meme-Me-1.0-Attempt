@@ -52,6 +52,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="37"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="pOW-QR-w4w" kind="show" id="1A2-QY-ecR"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -130,6 +133,7 @@
                                 <size key="customSize" width="368" height="343"/>
                                 <connections>
                                     <outlet property="image" destination="lpc-9M-dOV" id="V4l-So-cja"/>
+                                    <segue destination="pOW-QR-w4w" kind="show" identifier="" id="bWW-gt-hVr"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -272,9 +276,35 @@
             </objects>
             <point key="canvasLocation" x="1089.8550724637682" y="287.94642857142856"/>
         </scene>
+        <!--Meme Detail View Controller-->
+        <scene sceneID="Izd-vz-cvA">
+            <objects>
+                <viewController storyboardIdentifier="MemeDetailViewController" id="pOW-QR-w4w" customClass="MemeDetailViewController" customModule="Meme_Me_1_0_Attempt" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EcL-QX-O4b">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0RA-zy-uIm" userLabel="Meme Image">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="919"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="C0N-Cj-s8q"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="1IR-iW-qaJ"/>
+                    <connections>
+                        <outlet property="memedImage" destination="0RA-zy-uIm" id="Bbb-3U-OA4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IA9-z9-bbw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1762.3188405797102" y="287.94642857142856"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="KWf-eE-uWm"/>
+        <segue reference="1A2-QY-ecR"/>
+        <segue reference="Chn-Qx-Dat"/>
         <segue reference="KnT-ot-MyW"/>
     </inferredMetricsTieBreakers>
     <resources>

@@ -3,6 +3,7 @@ import Foundation
 import UIKit
 
 class SentMemesCollectionViewController: UICollectionViewController {
+    fileprivate let cellSize = UIScreen.main.bounds.width / 2
     // MARK: Properties
     var memes: [Meme]! {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -53,5 +54,17 @@ class SentMemesCollectionViewController: UICollectionViewController {
     }
     func getMeme(indexPath: IndexPath) -> Meme {
         return memes[(indexPath as NSIndexPath).row]
+    }
+}
+extension SentMemesCollectionViewController:
+    UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: cellSize, height: cellSize)
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+    func collectionView(_collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
     }
 }
