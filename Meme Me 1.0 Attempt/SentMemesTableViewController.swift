@@ -28,10 +28,6 @@ class SentMemesTableViewController: UITableViewController {
          return memes.count
      }
     
-    class MemeTableViewCell: UITableViewCell {
-        @IBOutlet weak var memeImage: UIImageView!
-    }
-    
     //from Udacity Lession 8.8 Setup the Sent Memes Collection View
      override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
          let cell = tableView.dequeueReusableCell(withIdentifier: "MemeTableViewCell", for: indexPath)
