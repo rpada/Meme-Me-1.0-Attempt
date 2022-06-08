@@ -53,6 +53,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,
         textField.delegate = self
         }
     // when you click 'Cancel' button, view disappears
+
     @IBAction func cancel(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }

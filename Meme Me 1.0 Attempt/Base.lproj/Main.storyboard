@@ -231,8 +231,8 @@
                                             <state key="normal" title="Button"/>
                                             <buttonConfiguration key="configuration" style="plain" title="Cancel"/>
                                             <connections>
-                                                <action selector="cancelMeme:" destination="eiK-lf-MSa" eventType="touchUpInside" id="pCi-vp-hRm"/>
-                                                <segue destination="W5a-yB-lRO" kind="show" id="KnT-ot-MyW"/>
+                                                <action selector="cancel:" destination="eiK-lf-MSa" eventType="touchUpInside" id="nMu-2n-C1j"/>
+                                                <segue destination="W5a-yB-lRO" kind="show" id="0oI-69-lDT"/>
                                             </connections>
                                         </button>
                                     </barButtonItem>
@@ -314,8 +314,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="KWf-eE-uWm"/>
-        <segue reference="KnT-ot-MyW"/>
+        <segue reference="Chn-Qx-Dat"/>
+        <segue reference="0oI-69-lDT"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="camera" catalog="system" width="128" height="94"/>
