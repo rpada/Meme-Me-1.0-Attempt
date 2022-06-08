@@ -9,7 +9,8 @@
 import Foundation
 import UIKit
 
-//a file that contains the Meme structure
+//meme structure
+// help from https://knowledge.udacity.com/questions/841254
 struct Meme {
     var topText: String
     var bottomText: String

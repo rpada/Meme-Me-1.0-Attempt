@@ -52,6 +52,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,
         textField.textAlignment = .center
         textField.delegate = self
         }
+    // when you click 'Cancel' button, view disappears
+    // https://stackoverflow.com/questions/33143997/how-do-i-create-a-cancel-button
     @IBAction func cancel(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
@@ -132,6 +134,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,
         let meme = Meme(topText: TopText.text!, bottomText: BottomText.text!, originalImage: imagePickerView.image!, memedImage: memeImage)
         
         // Add it to the memes array in the Application Delegate
+        //from Udacity Lession 8.5 Code for Using a Shared Model
         let object = UIApplication.shared.delegate
         let appDelegate = object as! AppDelegate
         appDelegate.memes.append(meme)

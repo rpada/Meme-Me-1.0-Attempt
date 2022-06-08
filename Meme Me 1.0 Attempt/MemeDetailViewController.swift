@@ -16,11 +16,15 @@ class MemeDetailViewController: UIViewController {
     
     var meme: Meme!
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.memedImage!.image = meme.memedImage
+   override func viewWillAppear(_ animated: Bool) {
+       // when the meme is clicked on it shows in the larger view
+       super.viewWillAppear(animated)
+       self.memedImage!.image = meme.memedImage
     }
-    
+    override func viewWillDisappear(_ animated: Bool) {
+         super.viewWillDisappear(animated)
+         self.tabBarController?.tabBar.isHidden = false
+     }
     
 }
 
