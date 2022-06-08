@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MemeCreationViewController.swift
 //  Image Picker
 //
 //  Created by Rianne Pada on 4/8/22.
